@@ -1,368 +1,460 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Fashion Over Faith 💙</title>
+<title>Fashion Over Faith | Style Your Way</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
+:root {
+    --blue: #174b83;
+    --light-blue: #eaf3ff;
+    --pale-blue: #f5f9ff;
+    --dark: #14243a;
+    --white: #ffffff;
 }
 
-body{
-    background:#eef7ff;
-    color:#102a43;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
-/* HEADER */
-header{
-    background:linear-gradient(135deg,#052f68,#168cff);
-    color:white;
-    padding:20px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    flex-wrap:wrap;
-    position:sticky;
-    top:0;
-    z-index:500;
+body {
+    font-family: Arial, sans-serif;
+    background: var(--pale-blue);
+    color: var(--dark);
 }
 
-.logo{
-    font-size:28px;
-    font-weight:800;
+header {
+    background: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 12px #174b8315;
 }
 
-.logo span{
-    color:#dff4ff;
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--blue);
+    letter-spacing: 1px;
 }
 
-nav{
-    display:flex;
-    gap:8px;
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-nav button{
-    border:0;
-    background:white;
-    color:#0755a5;
-    padding:10px 15px;
-    border-radius:25px;
-    cursor:pointer;
-    font-weight:bold;
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: bold;
 }
 
-/* HERO */
-.hero{
-    text-align:center;
-    padding:75px 20px;
-    background:linear-gradient(135deg,#dff3ff,#fff);
+nav a:hover {
+    color: #4287d4;
 }
 
-.hero h1{
-    font-size:52px;
-    color:#0755a5;
-    margin-bottom:12px;
+.nav-button {
+    border: none;
+    background: var(--blue);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.hero p{
-    font-size:18px;
-    margin-bottom:25px;
+.hero {
+    min-height: 520px;
+    padding: 70px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: linear-gradient(120deg, #e8f2ff, #c7e0ff);
 }
 
-.shop-btn{
-    border:0;
-    background:#0878d1;
-    color:white;
-    padding:14px 30px;
-    border-radius:30px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
+.hero-text {
+    max-width: 520px;
 }
 
-/* SEARCH */
-.search-area{
-    text-align:center;
-    padding:30px 7% 15px;
+.eyebrow {
+    color: var(--blue);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
 }
 
-#search{
-    width:90%;
-    max-width:650px;
-    padding:17px 23px;
-    border:2px solid #168cff;
-    border-radius:35px;
-    outline:none;
-    font-size:16px;
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 20px;
 }
 
-/* CATEGORY BUTTONS */
-.categories{
-    text-align:center;
-    padding:15px 5% 30px;
+.hero h1 span {
+    color: var(--blue);
 }
 
-.categories button{
-    border:0;
-    background:#d9edff;
-    color:#0755a5;
-    padding:10px 17px;
-    margin:5px;
-    border-radius:25px;
-    cursor:pointer;
-    font-weight:bold;
+.hero p {
+    line-height: 1.8;
+    margin-bottom: 28px;
+    color: #43566e;
 }
 
-.categories button:hover{
-    background:#0878d1;
-    color:white;
+.primary-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* SECTIONS */
-.section{
-    padding:25px 7% 55px;
+.hero-image {
+    width: min(42%, 440px);
+    min-width: 260px;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 180px 180px 15px 15px;
+    box-shadow: 12px 12px 0 #ffffff80;
 }
 
-.section h2{
-    color:#0755a5;
-    text-align:center;
-    font-size:30px;
-    margin-bottom:28px;
+.categories {
+    padding: 45px 6%;
+    text-align: center;
 }
 
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(205px,1fr));
-    gap:22px;
+.categories h2,
+.section-heading h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
 }
 
-/* PRODUCT */
-.product{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 18px rgba(0,75,150,.12);
-    transition:.25s;
-    position:relative;
+.categories p,
+.section-heading p {
+    color: #64748b;
+    line-height: 1.6;
 }
 
-.product:hover{
-    transform:translateY(-6px);
+.category-list {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
 }
 
-.product img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
+.category-chip {
+    background: white;
+    color: var(--blue);
+    border: 1px solid #cfdef2;
+    border-radius: 25px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.product-info{
-    padding:16px;
+.category-chip:hover,
+.category-chip.active {
+    background: var(--blue);
+    color: white;
 }
 
-.product-info h3{
-    margin-bottom:7px;
+.shop-section {
+    padding: 50px 6%;
+    scroll-margin-top: 85px;
 }
 
-.category{
-    color:#168cff;
-    font-size:12px;
-    font-weight:bold;
-    margin-bottom:8px;
+.section-heading {
+    text-align: center;
+    margin-bottom: 28px;
 }
 
-.price{
-    font-size:18px;
-    font-weight:bold;
-    margin:10px 0;
+.shop-tools {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
 }
 
-.badge{
-    position:absolute;
-    top:12px;
-    left:12px;
-    background:#0878d1;
-    color:white;
-    padding:6px 10px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:bold;
+#searchInput {
+    flex: 1;
+    min-width: 200px;
+    padding: 14px 16px;
+    border: 1px solid #d2deed;
+    border-radius: 8px;
+    font-size: 15px;
+    outline-color: var(--blue);
 }
 
-.actions{
-    display:flex;
-    gap:7px;
+select {
+    padding: 12px;
+    border: 1px solid #d2deed;
+    border-radius: 8px;
+    background: white;
 }
 
-.cart-btn{
-    flex:1;
-    border:0;
-    background:#0878d1;
-    color:white;
-    padding:10px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
 }
 
-.wishlist-btn{
-    width:43px;
-    border:2px solid #0878d1;
-    background:white;
-    color:#0878d1;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:20px;
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px #173f6810;
+    transition: transform .2s;
 }
 
-.wishlist-btn.active{
-    background:#0878d1;
-    color:white;
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
-/* PANELS */
-.panel{
-    position:fixed;
-    right:-430px;
-    top:0;
-    width:390px;
-    max-width:92%;
-    height:100%;
-    background:white;
-    z-index:1000;
-    padding:25px;
-    box-shadow:-5px 0 25px rgba(0,0,0,.2);
-    transition:.3s;
-    overflow-y:auto;
+.product-image-wrap {
+    position: relative;
+    background: var(--light-blue);
 }
 
-.panel.open{
-    right:0;
+.product-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
 }
 
-.panel h2{
-    color:#0755a5;
-    margin-bottom:20px;
+.wish-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    font-size: 20px;
 }
 
-.close{
-    float:right;
-    border:0;
-    background:#e4f3ff;
-    color:#0755a5;
-    border-radius:50%;
-    width:34px;
-    height:34px;
-    cursor:pointer;
+.wish-button.saved {
+    color: #e04470;
 }
 
-/* CART */
-.cart-item{
-    display:flex;
-    gap:10px;
-    align-items:center;
-    padding:14px 0;
-    border-bottom:1px solid #ddd;
+.product-info {
+    padding: 16px;
 }
 
-.cart-item img{
-    width:65px;
-    height:70px;
-    object-fit:cover;
-    border-radius:8px;
+.product-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
-.cart-info{
-    flex:1;
+.product-category {
+    color: #64748b;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 9px;
 }
 
-.quantity{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    margin-top:7px;
+.price {
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 14px;
 }
 
-.quantity button{
-    border:0;
-    background:#dcefff;
-    color:#0755a5;
-    width:25px;
-    height:25px;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:bold;
+.add-button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 6px;
+    background: var(--blue);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.remove{
-    border:0;
-    background:#ffecef;
-    color:#d90032;
-    padding:7px;
-    border-radius:7px;
-    cursor:pointer;
+.add-button:hover,
+.primary-button:hover {
+    background: #2869aa;
 }
 
-.total{
-    font-size:21px;
-    font-weight:bold;
-    color:#0755a5;
-    margin-top:20px;
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 35px;
+    color: #64748b;
 }
 
-.checkout{
-    width:100%;
-    border:0;
-    background:#0755a5;
-    color:white;
-    padding:14px;
-    margin-top:15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
+.panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    padding: 30px 6% 60px;
+    scroll-margin-top: 90px;
 }
 
-/* FOOTER */
-footer{
-    background:#052f68;
-    color:white;
-    text-align:center;
-    padding:35px;
+.panel {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px #173f6810;
 }
 
-footer h2{
-    margin-bottom:10px;
+.panel h2 {
+    margin-bottom: 18px;
+    color: var(--blue);
 }
 
-footer p{
-    margin:6px;
+.cart-item,
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e6edf6;
 }
 
-/* MOBILE */
-@media(max-width:600px){
+.cart-item img,
+.wishlist-item img {
+    width: 58px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 6px;
+}
 
-    header{
-        justify-content:center;
+.item-details {
+    flex: 1;
+}
+
+.item-details strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.item-details small {
+    color: #64748b;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 7px;
+}
+
+.quantity-controls button,
+.remove-button {
+    border: none;
+    padding: 5px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--light-blue);
+    color: var(--blue);
+}
+
+.remove-button {
+    background: #fff0f2;
+    color: #b42345;
+}
+
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    background: var(--blue);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background: #102e51;
+    color: white;
+    padding: 35px 6%;
+    text-align: center;
+    line-height: 2;
+}
+
+footer a {
+    color: #c6e0ff;
+}
+
+@media (max-width: 950px) {
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    header {
+        justify-content: center;
     }
 
-    .hero h1{
-        font-size:36px;
+    nav {
+        justify-content: center;
+        gap: 13px;
     }
 
-    .product img{
-        height:230px;
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 6%;
     }
 
-    .panel{
-        width:350px;
+    .hero-image {
+        width: 100%;
+        max-width: 380px;
+        min-width: 0;
+        height: 300px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product-image {
+        height: 210px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .panels {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -371,1024 +463,360 @@ footer p{
 <body>
 
 <header>
+    <a href="#home" class="logo" style="text-decoration:none;">
+        FASHION OVER FAITH
+    </a>
 
-<div class="logo">
-Fashion <span>Over Faith</span> 💙
-</div>
-
-<nav>
-<button onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button>
-<button onclick="openWishlist()">♡ Wishlist <span id="wishCount">0</span></button>
-</nav>
-
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="#cart">Cart 🛍️ <span id="cartCount">0</span></a>
+        <a href="#wishlist">Wishlist ♡</a>
+    </nav>
 </header>
 
-
-<section class="hero">
-
-<h1>FASHION OVER FAITH</h1>
-
-<p>Style that speaks. Confidence that shines. 💙</p>
-
-<button class="shop-btn"
-onclick="document.getElementById('shop').scrollIntoView()">
-SHOP NOW
-</button>
-
-</section>
-
-
-<div class="search-area">
-
-<input
-id="search"
-type="text"
-placeholder="🔎 Search clothes, jewellery, bags..."
-onkeyup="searchProducts()">
-
-</div>
-
-
-<div class="categories">
-
-<button onclick="filterProducts('all')">All</button>
-<button onclick="filterProducts('dress')">Dresses</button>
-<button onclick="filterProducts('top')">Tops</button>
-<button onclick="filterProducts('bottom')">Bottoms</button>
-<button onclick="filterProducts('bag')">Bags</button>
-<button onclick="filterProducts('jacket')">Jackets</button>
-<button onclick="filterProducts('shoes')">Shoes</button>
-<button onclick="filterProducts('jewellery')">Jewellery</button>
-<button onclick="filterProducts('accessory')">Accessories</button>
-<button onclick="filterProducts('hat')">Hats</button>
-<button onclick="filterProducts('watch')">Watches</button>
-<button onclick="filterProducts('scarf')">Scarves</button>
-
-</div>
-
-
-<!-- NEW ARRIVALS -->
-
-<section class="section">
-
-<h2>✨ New Arrivals</h2>
-
-<div class="product-grid" id="newArrivals"></div>
-
-</section>
-
-
-<!-- BEST SELLERS -->
-
-<section class="section">
-
-<h2>🔥 Best Sellers</h2>
-
-<div class="product-grid" id="bestSellers"></div>
-
-</section>
-
-
-<!-- ALL PRODUCTS -->
-
-<section class="section" id="shop">
-
-<h2>🛍️ Shop Everything</h2>
-
-<div class="product-grid" id="productGrid"></div>
-
-</section>
-
-
-<!-- CART -->
-
-<div class="panel" id="cartPanel">
-
-<button class="close" onclick="closePanels()">✕</button>
-
-<h2>🛒 Your Cart</h2>
-
-<div id="cartItems"></div>
-
-<div class="total">
-Total: ₦<span id="cartTotal">0</span>
-</div>
-
-<button class="checkout" onclick="checkout()">
-Checkout
-</button>
-
-</div>
-
-
-<!-- WISHLIST -->
-
-<div class="panel" id="wishlistPanel">
-
-<button class="close" onclick="closePanels()">✕</button>
-
-<h2>♡ Your Wishlist</h2>
-
-<div id="wishlistItems"></div>
-
-</div>
-
-
-<footer>
-
-<h2>Fashion Over Faith 💙</h2>
-
-<p>Wear your confidence.</p>
-
-<p>Clothes • Bags • Jewellery • Accessories</p>
-
-<p>© 2026 Fashion Over Faith</p>
-
-</footer>
-
-
-<script>
-
-/* =========================
-   PRODUCTS
-========================= */
-
-const products = [
-
-/* DRESSES */
-
-{
-name:"Midnight Blue Dress",
-price:18000,
-category:"dress",
-image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae",
-new:true,
-best:true
-},
-
-{
-name:"Elegant Satin Dress",
-price:22000,
-category:"dress",
-image:"https://images.unsplash.com/photo-1595777457583-95e059d581b8",
-new:true,
-best:true
-},
-
-{
-name:"Summer Mini Dress",
-price:15000,
-category:"dress",
-image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b",
-new:true
-},
-
-{
-name:"Classic White Dress",
-price:20000,
-category:"dress",
-image:"https://images.unsplash.com/photo-1591369822096-ffd140ec948f",
-best:true
-},
-
-{
-name:"Blue Floral Dress",
-price:19000,
-category:"dress",
-image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c"
-},
-
-{
-name:"Black Party Dress",
-price:24000,
-category:"dress",
-image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae",
-best:true
-},
-
-{
-name:"Elegant Blue Gown",
-price:32000,
-category:"dress",
-image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956",
-new:true
-},
-
-/* TOPS */
-
-{
-name:"Oversized Blue Tee",
-price:9000,
-category:"top",
-image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
-best:true
-},
-
-{
-name:"White Crop Top",
-price:7500,
-category:"top",
-image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3"
-},
-
-{
-name:"Blue Ribbed Top",
-price:8500,
-category:"top",
-image:"https://images.unsplash.com/photo-1564257577054-9e7e6b9b4b7d",
-new:true
-},
-
-{
-name:"Graphic Fashion Tee",
-price:10000,
-category:"top",
-image:"https://images.unsplash.com/photo-1503341504253-dff4815485f1"
-},
-
-{
-name:"Long Sleeve Top",
-price:12000,
-category:"top",
-image:"https://images.unsplash.com/photo-1485968579580-b6d095142e6e"
-},
-
-{
-name:"Elegant Blouse",
-price:14000,
-category:"top",
-image:"https://images.unsplash.com/photo-1605763240000-7e93b172d754",
-new:true
-},
-
-{
-name:"Blue Corset Top",
-price:16000,
-category:"top",
-image:"https://images.unsplash.com/photo-1591369822096-ffd140ec948f",
-best:true
-},
-
-/* BOTTOMS */
-
-{
-name:"Wide Leg Jeans",
-price:18000,
-category:"bottom",
-image:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246",
-best:true
-},
-
-{
-name:"Blue Denim Skirt",
-price:13000,
-category:"bottom",
-image:"https://images.unsplash.com/photo-1583496661160-fb5886a13d27"
-},
-
-{
-name:"Cargo Pants",
-price:17000,
-category:"bottom",
-image:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
-new:true
-},
-
-{
-name:"Black Straight Jeans",
-price:16000,
-category:"bottom",
-image:"https://images.unsplash.com/photo-1542272604-787c3835535d"
-},
-
-{
-name:"Pleated Mini Skirt",
-price:11000,
-category:"bottom",
-image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1",
-best:true
-},
-
-/* BAGS */
-
-{
-name:"Blue Shoulder Bag",
-price:15000,
-category:"bag",
-image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3",
-best:true
-},
-
-{
-name:"Classic Black Handbag",
-price:21000,
-category:"bag",
-image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d",
-new:true
-},
-
-{
-name:"Mini White Bag",
-price:13000,
-category:"bag",
-image:"https://images.unsplash.com/photo-1594223274512-ad4803739b7c"
-},
-
-{
-name:"Denim Tote Bag",
-price:12000,
-category:"bag",
-image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa"
-},
-
-{
-name:"Luxury Blue Bag",
-price:25000,
-category:"bag",
-image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
-best:true
-},
-
-{
-name:"Mini Crossbody Bag",
-price:14500,
-category:"bag",
-image:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7",
-new:true
-},
-
-{
-name:"White Shoulder Bag",
-price:17500,
-category:"bag",
-image:"https://images.unsplash.com/photo-1585488438684-ff4d4f0c4b6f"
-},
-
-/* JACKETS */
-
-{
-name:"Blue Denim Jacket",
-price:22000,
-category:"jacket",
-image:"https://images.unsplash.com/photo-1523205771623-e0faa4d2813d",
-best:true
-},
-
-{
-name:"Oversized Black Jacket",
-price:25000,
-category:"jacket",
-image:"https://images.unsplash.com/photo-1551028719-00167b16eac5"
-},
-
-{
-name:"Cropped Denim Jacket",
-price:20000,
-category:"jacket",
-image:"https://images.unsplash.com/photo-1543076447-215ad9ba6923",
-new:true
-},
-
-{
-name:"Blue Puffer Jacket",
-price:30000,
-category:"jacket",
-image:"https://images.unsplash.com/photo-1548883354-7622d03aca27",
-best:true
-},
-
-{
-name:"Leather Style Jacket",
-price:28000,
-category:"jacket",
-image:"https://images.unsplash.com/photo-1551028719-00167b16eac5"
-},
-
-{
-name:"Varsity Jacket",
-price:27000,
-category:"jacket",
-image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3",
-new:true
-},
-
-/* SHOES */
-
-{
-name:"White Sneakers",
-price:18000,
-category:"shoes",
-image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-best:true
-},
-
-{
-name:"Blue Sneakers",
-price:20000,
-category:"shoes",
-image:"https://images.unsplash.com/photo-1552346154-21d32810aba3"
-},
-
-{
-name:"Classic Heels",
-price:22000,
-category:"shoes",
-image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2"
-},
-
-{
-name:"Platform Shoes",
-price:24000,
-category:"shoes",
-image:"https://images.unsplash.com/photo-1560769629-975ec94e6a86",
-new:true
-},
-
-{
-name:"Blue Ballet Flats",
-price:15000,
-category:"shoes",
-image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2"
-},
-
-/* JEWELLERY 💎 */
-
-{
-name:"Silver Heart Necklace",
-price:7000,
-category:"jewellery",
-image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f",
-new:true,
-best:true
-},
-
-{
-name:"Pearl Necklace",
-price:8500,
-category:"jewellery",
-image:"https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0",
-best:true
-},
-
-{
-name:"Gold Hoop Earrings",
-price:5500,
-category:"jewellery",
-image:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908"
-},
-
-{
-name:"Silver Hoop Earrings",
-price:5000,
-category:"jewellery",
-image:"https://images.unsplash.com/photo-1635767798638-3e25273a8236",
-new:true
-},
-
-{
-name:"Layered Gold Necklace",
-price:9500,
-category:"jewellery",
-image:"https://images.unsplash.com/photo-1599643477877-530eb83abc8e",
-best:true
-},
-
-{
-name:"Blue Gem Bracelet",
-price:6500,
-category:"jewellery",
-image:"https://images.unsplash.com/photo-1573408301185-9146fe634ad0"
-},
-
-{
-name:"Elegant Ring Set",
-price:6000,
-category:"jewellery",
-image:"https://images.unsplash.com/photo-1605100804763-247f67b3557e",
-new:true
-},
-
-{
-name:"Pearl Earrings",
-price:5500,
-category:"jewellery",
-image:"https://images.unsplash.com/photo-1630019852942-f89202989a59"
-},
-
-/* ACCESSORIES */
-
-{
-name:"Black Sunglasses",
-price:8000,
-category:"accessory",
-image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083",
-best:true
-},
-
-{
-name:"Blue Sunglasses",
-price:8500,
-category:"accessory",
-image:"https://images.unsplash.com/photo-1577803645773-f96470509666",
-new:true
-},
-
-{
-name:"Fashion Hair Clips",
-price:3500,
-category:"accessory",
-image:"https://images.unsplash.com/photo-1596462502278-27bfdc403348"
-},
-
-{
-name:"Blue Hair Bow",
-price:4000,
-category:"accessory",
-image:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e"
-},
-
-{
-name:"Fashion Belt",
-price:6500,
-category:"accessory",
-image:"https://images.unsplash.com/photo-1624222247344-550fb60583dc"
-},
-
-/* HATS */
-
-{
-name:"Classic Blue Cap",
-price:6000,
-category:"hat",
-image:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b",
-best:true
-},
-
-{
-name:"White Fashion Cap",
-price:6000,
-category:"hat",
-image:"https://images.unsplash.com/photo-1521369909029-2afed882baee"
-},
-
-{
-name:"Denim Bucket Hat",
-price:7500,
-category:"hat",
-image:"https://images.unsplash.com/photo-1529958030586-3aae4ca485ff",
-new:true
-},
-
-/* WATCHES */
-
-{
-name:"Classic Silver Watch",
-price:15000,
-category:"watch",
-image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d",
-best:true
-},
-
-{
-name:"Blue Strap Watch",
-price:13000,
-category:"watch",
-image:"https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3",
-new:true
-},
-
-{
-name:"Gold Style Watch",
-price:18000,
-category:"watch",
-image:"https://images.unsplash.com/photo-1524592094714-0f0654e20314"
-},
-
-/* SCARVES */
-
-{
-name:"Blue Silk Scarf",
-price:7000,
-category:"scarf",
-image:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26",
-new:true
-},
-
-{
-name:"Patterned Fashion Scarf",
-price:6500,
-category:"scarf",
-image:"https://images.unsplash.com/photo-1606760227091-3dd870d97f1d"
-}
-
-];
-
-
-/* =========================
-   CART + WISHLIST
-========================= */
-
-let cart=[];
-let wishlist=[];
-
-
-/* DISPLAY PRODUCTS */
-
-function displayProducts(list=products,target="productGrid"){
-
-    const grid=document.getElementById(target);
-
-    if(!grid)return;
-
-    grid.innerHTML="";
-
-    list.forEach((product,index)=>{
-
-        const originalIndex=products.indexOf(product);
-
-        const wished=wishlist.some(
-            item=>item.name===product.name
-        );
-
-        let badge="";
-
-        if(product.new){
-            badge=`<div class="badge">NEW</div>`;
-        }
-
-        if(product.best){
-            badge=`<div class="badge">BEST SELLER</div>`;
-        }
-
-        grid.innerHTML+=`
-
-        <div class="product">
-
-        ${badge}
+<main>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <div class="eyebrow">YOUR STYLE. YOUR STORY.</div>
+            <h1>Dress like <span>you mean it.</span></h1>
+            <p>
+                Discover your next favourite outfit at Fashion Over Faith.
+                From everyday essentials to statement pieces, find styles
+                that feel like YOU.
+            </p>
+            <a href="#shop" class="primary-button">SHOP THE COLLECTION →</a>
+        </div>
 
         <img
-        src="${product.image}?auto=format&fit=crop&w=600&q=80"
-        alt="${product.name}">
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85"
+            alt="Fashion collection"
+        >
+    </section>
 
-        <div class="product-info">
+    <section class="categories" id="categories">
+        <h2>Find Your Style</h2>
+        <p>A little something for every mood and moment.</p>
 
-        <div class="category">
-        ${product.category.toUpperCase()}
+        <div class="category-list">
+            <button class="category-chip active" data-category="All">All Items</button>
+            <button class="category-chip" data-category="Clothing">Clothing</button>
+            <button class="category-chip" data-category="Jackets">Jackets</button>
+            <button class="category-chip" data-category="Bags">Bags</button>
+            <button class="category-chip" data-category="Shoes">Shoes</button>
+            <button class="category-chip" data-category="Jewellery">Jewellery</button>
+            <button class="category-chip" data-category="Accessories">Accessories</button>
+        </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+        <div class="section-heading">
+            <h2>The Collection</h2>
+            <p>Find your next outfit favourite.</p>
         </div>
 
-        <h3>${product.name}</h3>
+        <div class="shop-tools">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search clothes, bags, jackets..."
+                aria-label="Search products"
+            >
 
-        <div class="price">
-        ₦${product.price.toLocaleString()}
+            <select id="sortSelect" aria-label="Sort products">
+                <option value="default">Sort: Featured</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="az">Name: A to Z</option>
+            </select>
         </div>
 
-        <div class="actions">
+        <div class="product-grid" id="productGrid"></div>
+    </section>
 
-        <button
-        class="cart-btn"
-        onclick="addToCart(${originalIndex})">
-        Add to Cart
-        </button>
-
-        <button
-        class="wishlist-btn ${wished?"active":""}"
-        onclick="toggleWishlist(${originalIndex})">
-        ${wished?"♥":"♡"}
-        </button>
-
+    <section class="panels">
+        <div class="panel" id="cart">
+            <h2>🛍️ Your Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total" id="cartTotal">Total: ₦0</div>
+            <button class="checkout-button" onclick="checkout()">
+                Continue to Checkout
+            </button>
+            <p style="font-size:12px;color:#64748b;margin-top:10px;">
+                Demo checkout only. Online payments are not connected.
+            </p>
         </div>
 
+        <div class="panel" id="wishlist">
+            <h2>♡ Your Wishlist</h2>
+            <div id="wishlistItems"></div>
         </div>
-        </div>
+    </section>
+</main>
 
-        `;
-    });
+<footer>
+    <h2>FASHION OVER FAITH</h2>
+    <p>Your style. Your story. Your confidence.</p>
+    <p>© 2026 Fashion Over Faith. All rights reserved.</p>
+    <a href="#home">Back to top ↑</a>
+</footer>
+
+<script>
+const products = [
+    {id:1, name:"Classic White Tee", category:"Clothing", price:8500, image:"photo-1521572163474-6864f9cf17ab"},
+    {id:2, name:"Blue Denim Jeans", category:"Clothing", price:18000, image:"photo-1542272604-787c3835535d"},
+    {id:3, name:"Elegant Summer Dress", category:"Clothing", price:22000, image:"photo-1515372039744-b8f02a3ae446"},
+    {id:4, name:"Oversized Blue Shirt", category:"Clothing", price:14000, image:"photo-1596755094514-f87e34085b2c"},
+    {id:5, name:"Casual Hoodie", category:"Clothing", price:20000, image:"photo-1556821840-3a63f95609a7"},
+    {id:6, name:"Pleated Skirt", category:"Clothing", price:16000, image:"photo-1583496661160-fb5886a13d44"},
+    {id:7, name:"Black Wide-Leg Trousers", category:"Clothing", price:19000, image:"photo-1506629905607-d9d0a1b4f0b7"},
+    {id:8, name:"Floral Blouse", category:"Clothing", price:12500, image:"photo-1564257577-7e9d3c7c8b8d"},
+    {id:9, name:"Blue Denim Jacket", category:"Jackets", price:28000, image:"photo-1543076447-215ad9ba6923"},
+    {id:10, name:"Leather-Style Jacket", category:"Jackets", price:35000, image:"photo-1551028719-00167b16eac5"},
+    {id:11, name:"Cropped Jacket", category:"Jackets", price:24000, image:"photo-1548624149-f9b185f6e8e6"},
+    {id:12, name:"Long Trench Coat", category:"Jackets", price:42000, image:"photo-1539533018447-63fcce2678e3"},
+    {id:13, name:"Everyday Tote Bag", category:"Bags", price:15000, image:"photo-1548036328-c9fa89d128fa"},
+    {id:14, name:"Mini Shoulder Bag", category:"Bags", price:18000, image:"photo-1584917865442-de89df76afd3"},
+    {id:15, name:"Classic Handbag", category:"Bags", price:25000, image:"photo-1584917865442-de89df76afd3"},
+    {id:16, name:"Travel Backpack", category:"Bags", price:22000, image:"photo-1553062407-98eeb64c6a62"},
+    {id:17, name:"White Sneakers", category:"Shoes", price:23000, image:"photo-1542291026-7eec264c27ff"},
+    {id:18, name:"Everyday Trainers", category:"Shoes", price:21000, image:"photo-1460353581641-37baddab0fa2"},
+    {id:19, name:"Elegant Flats", category:"Shoes", price:14000, image:"photo-1543163521-1bf539c55dd2"},
+    {id:20, name:"Classic Boots", category:"Shoes", price:30000, image:"photo-1542291026-7eec264c27ff"},
+    {id:21, name:"Gold-Tone Necklace", category:"Jewellery", price:7500, image:"photo-1611652022419-a9419f74343d"},
+    {id:22, name:"Hoop Earrings", category:"Jewellery", price:5000, image:"photo-1535632066927-ab7c9ab60908"},
+    {id:23, name:"Layered Bracelet", category:"Jewellery", price:6500, image:"photo-1611591437281-460bfbe1220a"},
+    {id:24, name:"Statement Ring", category:"Jewellery", price:4500, image:"photo-1605100804763-247f67b3557e"},
+    {id:25, name:"Blue Sunglasses", category:"Accessories", price:8000, image:"photo-1511499767150-a48a237f0083"},
+    {id:26, name:"Everyday Cap", category:"Accessories", price:6000, image:"photo-1588850561407-ed78c282e89b"},
+    {id:27, name:"Silk-Style Scarf", category:"Accessories", price:7000, image:"photo-1601924994987-69e26d50dc26"},
+    {id:28, name:"Minimalist Watch", category:"Accessories", price:12000, image:"photo-1524592094714-0f0654e20314"},
+    {id:29, name:"Knit Cardigan", category:"Clothing", price:19500, image:"photo-1434389677669-e08b4cac3105"},
+    {id:30, name:"Striped Shirt", category:"Clothing", price:13500, image:"photo-1603252109303-2751441dd157"},
+    {id:31, name:"Midi Skirt", category:"Clothing", price:17000, image:"photo-1583496661160-fb5886a13d44"},
+    {id:32, name:"Casual Jumpsuit", category:"Clothing", price:24000, image:"photo-1515886657613-9f3515b0c78f"},
+    {id:33, name:"Puffer Jacket", category:"Jackets", price:32000, image:"photo-1544923246-77307dd654cb"},
+    {id:34, name:"Lightweight Blazer", category:"Jackets", price:29000, image:"photo-1591047139829-d91aecb6caea"},
+    {id:35, name:"Quilted Shoulder Bag", category:"Bags", price:26000, image:"photo-1584917865442-de89df76afd3"},
+    {id:36, name:"Canvas Tote", category:"Bags", price:9500, image:"photo-1544816155-12df9643f363"},
+    {id:37, name:"Running Shoes", category:"Shoes", price:26000, image:"photo-1542291026-7eec264c27ff"},
+    {id:38, name:"Strappy Sandals", category:"Shoes", price:13000, image:"photo-1543163521-1bf539c55dd2"},
+    {id:39, name:"Pearl Earrings", category:"Jewellery", price:5500, image:"photo-1535632066927-ab7c9ab60908"},
+    {id:40, name:"Layered Gold Necklace", category:"Jewellery", price:9000, image:"photo-1611652022419-a9419f74343d"},
+    {id:41, name:"Blue Hair Bow", category:"Accessories", price:3500, image:"photo-1529139574466-a303027c1d8b"},
+    {id:42, name:"Fashion Belt", category:"Accessories", price:6500, image:"photo-1553062407-98eeb64c6a62"},
+    {id:43, name:"Denim Mini Skirt", category:"Clothing", price:14500, image:"photo-1583496661160-fb5886a13d44"},
+    {id:44, name:"Soft Knit Sweater", category:"Clothing", price:18000, image:"photo-1434389677669-e08b4cac3105"},
+    {id:45, name:"Tailored Blazer", category:"Jackets", price:31000, image:"photo-1591047139829-d91aecb6caea"},
+    {id:46, name:"Bomber Jacket", category:"Jackets", price:27000, image:"photo-1551028719-00167b16eac5"},
+    {id:47, name:"Crossbody Bag", category:"Bags", price:16500, image:"photo-1584917865442-de89df76afd3"},
+    {id:48, name:"Weekend Duffle Bag", category:"Bags", price:28000, image:"photo-1553062407-98eeb64c6a62"},
+    {id:49, name:"Slip-On Sneakers", category:"Shoes", price:17500, image:"photo-1460353581641-37baddab0fa2"},
+    {id:50, name:"Classic Loafers", category:"Shoes", price:22000, image:"photo-1543163521-1bf539c55dd2"}
+];
+
+const cart = {};
+const wishlist = new Set();
+let activeCategory = "All";
+
+const productGrid = document.getElementById("productGrid");
+const searchInput = document.getElementById("searchInput");
+const sortSelect = document.getElementById("sortSelect");
+
+function formatPrice(price) {
+    return "₦" + price.toLocaleString("en-NG");
 }
 
-
-/* CART */
-
-function addToCart(index){
-
-    const product=products[index];
-
-    const existing=cart.find(
-        item=>item.name===product.name
-    );
-
-    if(existing){
-        existing.quantity++;
-    }else{
-        cart.push({
-            ...product,
-            quantity:1
-        });
-    }
-
-    updateCart();
-
-    alert(product.name+" added to your cart! 🛍️");
+function imageUrl(photoId) {
+    return "https://images.unsplash.com/" + photoId +
+        "?auto=format&fit=crop&w=650&q=80";
 }
 
+function renderProducts() {
+    const query = searchInput.value.trim().toLowerCase();
 
-function updateCart(){
+    let visible = products.filter(product => {
+        const matchesText =
+            product.name.toLowerCase().includes(query) ||
+            product.category.toLowerCase().includes(query);
 
-    const container=document.getElementById("cartItems");
+        const matchesCategory =
+            activeCategory === "All" ||
+            product.category === activeCategory;
 
-    container.innerHTML="";
-
-    let total=0;
-    let count=0;
-
-    cart.forEach((item,index)=>{
-
-        total+=item.price*item.quantity;
-
-        count+=item.quantity;
-
-        container.innerHTML+=`
-
-        <div class="cart-item">
-
-        <img src="${item.image}?auto=format&fit=crop&w=150&q=70">
-
-        <div class="cart-info">
-
-        <strong>${item.name}</strong>
-
-        <br>
-
-        ₦${item.price.toLocaleString()}
-
-        <div class="quantity">
-
-        <button onclick="changeQuantity(${index},-1)">
-        −
-        </button>
-
-        <span>${item.quantity}</span>
-
-        <button onclick="changeQuantity(${index},1)">
-        +
-        </button>
-
-        </div>
-
-        </div>
-
-        <button
-        class="remove"
-        onclick="removeFromCart(${index})">
-        ✕
-        </button>
-
-        </div>
-        `;
-    });
-
-    document.getElementById("cartTotal")
-    .textContent=total.toLocaleString();
-
-    document.getElementById("cartCount")
-    .textContent=count;
-}
-
-
-function changeQuantity(index,change){
-
-    cart[index].quantity+=change;
-
-    if(cart[index].quantity<=0){
-        cart.splice(index,1);
-    }
-
-    updateCart();
-}
-
-
-function removeFromCart(index){
-
-    cart.splice(index,1);
-
-    updateCart();
-}
-
-
-/* WISHLIST */
-
-function toggleWishlist(index){
-
-    const product=products[index];
-
-    const existing=wishlist.findIndex(
-        item=>item.name===product.name
-    );
-
-    if(existing>=0){
-        wishlist.splice(existing,1);
-    }else{
-        wishlist.push(product);
-    }
-
-    updateWishlist();
-
-    displayProducts();
-
-    displayProducts(
-        products.filter(p=>p.new),
-        "newArrivals"
-    );
-
-    displayProducts(
-        products.filter(p=>p.best),
-        "bestSellers"
-    );
-}
-
-
-function updateWishlist(){
-
-    const container=
-    document.getElementById("wishlistItems");
-
-    container.innerHTML="";
-
-    wishlist.forEach((item,index)=>{
-
-        container.innerHTML+=`
-
-        <div class="cart-item">
-
-        <img src="${item.image}?auto=format&fit=crop&w=150&q=70">
-
-        <div class="cart-info">
-
-        <strong>${item.name}</strong>
-
-        <br>
-
-        ₦${item.price.toLocaleString()}
-
-        </div>
-
-        <button
-        class="remove"
-        onclick="removeWishlist(${index})">
-        ✕
-        </button>
-
-        </div>
-
-        `;
+        return matchesText && matchesCategory;
     });
 
-    document.getElementById("wishCount")
-    .textContent=wishlist.length;
-}
-
-
-function removeWishlist(index){
-
-    wishlist.splice(index,1);
-
-    updateWishlist();
-
-    displayProducts();
-
-    displayProducts(
-        products.filter(p=>p.new),
-        "newArrivals"
-    );
-
-    displayProducts(
-        products.filter(p=>p.best),
-        "bestSellers"
-    );
-}
-
-
-/* SEARCH */
-
-function searchProducts(){
-
-    const query=
-    document.getElementById("search")
-    .value
-    .toLowerCase();
-
-    const results=products.filter(product=>
-
-        product.name.toLowerCase()
-        .includes(query)
-
-        ||
-
-        product.category.toLowerCase()
-        .includes(query)
-
-    );
-
-    displayProducts(results);
-}
-
-
-/* FILTER */
-
-function filterProducts(category){
-
-    document.getElementById("search").value="";
-
-    if(category==="all"){
-        displayProducts(products);
-    }else{
-
-        displayProducts(
-            products.filter(
-                product=>product.category===category
-            )
-        );
+    if (sortSelect.value === "low") {
+        visible.sort((a, b) => a.price - b.price);
+    } else if (sortSelect.value === "high") {
+        visible.sort((a, b) => b.price - a.price);
+    } else if (sortSelect.value === "az") {
+        visible.sort((a, b) => a.name.localeCompare(b.name));
     }
 
-    document.getElementById("shop")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-}
-
-
-/* PANELS */
-
-function openCart(){
-
-    closePanels();
-
-    document.getElementById("cartPanel")
-    .classList.add("open");
-}
-
-
-function openWishlist(){
-
-    closePanels();
-
-    document.getElementById("wishlistPanel")
-    .classList.add("open");
-}
-
-
-function closePanels(){
-
-    document.getElementById("cartPanel")
-    .classList.remove("open");
-
-    document.getElementById("wishlistPanel")
-    .classList.remove("open");
-}
-
-
-/* CHECKOUT */
-
-function checkout(){
-
-    if(cart.length===0){
-
-        alert("Your cart is empty! 😭");
-
+    if (visible.length === 0) {
+        productGrid.innerHTML =
+            '<p class="empty-message">No items found. Try another search! 💙</p>';
         return;
     }
 
-    const total=cart.reduce(
-        (sum,item)=>sum+(item.price*item.quantity),
-        0
-    );
+    productGrid.innerHTML = visible.map(product => `
+        <article class="product-card">
+            <div class="product-image-wrap">
+                <img
+                    class="product-image"
+                    src="${imageUrl(product.image)}"
+                    alt="${product.name}"
+                    loading="lazy"
+                >
+                <button
+                    class="wish-button ${wishlist.has(product.id) ? "saved" : ""}"
+                    onclick="toggleWishlist(${product.id})"
+                    aria-label="Add ${product.name} to wishlist"
+                    title="Add to wishlist"
+                >${wishlist.has(product.id) ? "♥" : "♡"}</button>
+            </div>
+            <div class="product-info">
+                <div class="product-category">${product.category}</div>
+                <h3>${product.name}</h3>
+                <div class="price">${formatPrice(product.price)}</div>
+                <button class="add-button" onclick="addToCart(${product.id})">
+                    Add to Cart +
+                </button>
+            </div>
+        </article>
+    `).join("");
+}
+
+function addToCart(id) {
+    cart[id] = (cart[id] || 0) + 1;
+    renderCart();
+}
+
+function changeQuantity(id, change) {
+    cart[id] = (cart[id] || 0) + change;
+
+    if (cart[id] <= 0) {
+        delete cart[id];
+    }
+
+    renderCart();
+}
+
+function renderCart() {
+    const entries = Object.entries(cart);
+    const count = entries.reduce((sum, entry) => sum + entry[1], 0);
+
+    document.getElementById("cartCount").textContent = count;
+
+    document.getElementById("cartItems").innerHTML = entries.length
+        ? entries.map(([id, quantity]) => {
+            const product = products.find(item => item.id === Number(id));
+
+            return `
+                <div class="cart-item">
+                    <img src="${imageUrl(product.image)}" alt="">
+                    <div class="item-details">
+                        <strong>${product.name}</strong>
+                        <small>${formatPrice(product.price)}</small>
+                        <div class="quantity-controls">
+                            <button onclick="changeQuantity(${id}, -1)">−</button>
+                            <span>${quantity}</span>
+                            <button onclick="changeQuantity(${id}, 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-button"
+                        onclick="removeFromCart(${id})">Remove</button>
+                </div>
+            `;
+        }).join("")
+        : '<p>Your cart is empty. Find something you love! 💙</p>';
+
+    const total = entries.reduce((sum, [id, quantity]) => {
+        const product = products.find(item => item.id === Number(id));
+        return sum + product.price * quantity;
+    }, 0);
+
+    document.getElementById("cartTotal").textContent =
+        "Total: " + formatPrice(total);
+}
+
+function removeFromCart(id) {
+    delete cart[id];
+    renderCart();
+}
+
+function toggleWishlist(id) {
+    if (wishlist.has(id)) {
+        wishlist.delete(id);
+    } else {
+        wishlist.add(id);
+    }
+
+    renderProducts();
+    renderWishlist();
+}
+
+function renderWishlist() {
+    const saved = products.filter(product => wishlist.has(product.id));
+
+    document.getElementById("wishlistItems").innerHTML = saved.length
+        ? saved.map(product => `
+            <div class="wishlist-item">
+                <img src="${imageUrl(product.image)}" alt="">
+                <div class="item-details">
+                    <strong>${product.name}</strong>
+                    <small>${formatPrice(product.price)}</small>
+                </div>
+                <button class="add-button"
+                    style="width:auto;padding:9px;"
+                    onclick="addToCart(${product.id})">Add</button>
+                <button class="remove-button"
+                    onclick="toggleWishlist(${product.id})">✕</button>
+            </div>
+        `).join("")
+        : "<p>Your wishlist is empty. Tap ♡ on any item to save it!</p>";
+}
+
+function checkout() {
+    const count = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
+
+    if (count === 0) {
+        alert("Your cart is empty. Add something first! 💙");
+        return;
+    }
 
     alert(
-        "Thank you for shopping at Fashion Over Faith! 💙\n\n"+
-        "Your total is ₦"+
-        total.toLocaleString()+
-        "\n\nCheckout system coming soon!"
+        "Thanks for shopping at Fashion Over Faith! 💙\n\n" +
+        "Your cart has " + count + " item(s).\n" +
+        "Online payment is not connected yet, so this is a demo checkout."
     );
 }
 
+document.querySelectorAll(".category-chip").forEach(button => {
+    button.addEventListener("click", () => {
+        activeCategory = button.dataset.category;
 
-/* START */
+        document.querySelectorAll(".category-chip").forEach(chip => {
+            chip.classList.toggle("active", chip === button);
+        });
 
-displayProducts();
+        renderProducts();
+        document.getElementById("shop").scrollIntoView({behavior:"smooth"});
+    });
+});
 
-displayProducts(
-    products.filter(p=>p.new),
-    "newArrivals"
-);
+searchInput.addEventListener("input", renderProducts);
+sortSelect.addEventListener("change", renderProducts);
 
-displayProducts(
-    products.filter(p=>p.best),
-    "bestSellers"
-);
-
-updateCart();
-updateWishlist();
-
+renderProducts();
+renderCart();
+renderWishlist();
 </script>
 
 </body>
 </html>
+```
